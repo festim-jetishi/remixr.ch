@@ -24,10 +24,10 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
         <img 
           src={before} 
           alt={`Before: ${title}`} 
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             opacity: isHovered ? 0 : 1,
-            transform: isHovered ? 'scale(1.1)' : 'scale(1)'
+            transition: "opacity 400ms ease-in-out"
           }}
         />
         
@@ -35,10 +35,10 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
         <img 
           src={after} 
           alt={`After: ${title}`} 
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             opacity: isHovered ? 1 : 0,
-            transform: isHovered ? 'scale(1)' : 'scale(1.1)'
+            transition: "opacity 400ms ease-in-out"
           }}
         />
         
@@ -48,7 +48,7 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h3 className="text-xl font-bold mb-2 gradient-text">{title}</h3>
-          <p className="text-white/70 text-sm transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <p className="text-white/70 text-sm transform translate-y-0 opacity-100 transition-all duration-300">
             {description}
           </p>
         </div>
@@ -105,35 +105,39 @@ export default function Showcase() {
     },
   ];
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality with requestAnimationFrame for better performance
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
     
     let scrollAmount = 0;
     let pause = false;
+    let animationId: number;
     
     const handleScroll = () => {
       if (!container || pause) return;
       
-      scrollAmount += 0.5;
+      scrollAmount += 0.3; // Reduced speed for smoother scrolling
       container.scrollLeft = scrollAmount;
       
       if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
         scrollAmount = 0;
       }
       
-      requestAnimationFrame(handleScroll);
+      animationId = requestAnimationFrame(handleScroll);
     };
     
-    const animation = requestAnimationFrame(handleScroll);
+    animationId = requestAnimationFrame(handleScroll);
     
     // Pause scrolling when hovering
     container.addEventListener('mouseenter', () => { pause = true; });
-    container.addEventListener('mouseleave', () => { pause = false; requestAnimationFrame(handleScroll); });
+    container.addEventListener('mouseleave', () => { 
+      pause = false; 
+      animationId = requestAnimationFrame(handleScroll); 
+    });
     
     return () => {
-      cancelAnimationFrame(animation);
+      cancelAnimationFrame(animationId);
       container.removeEventListener('mouseenter', () => { pause = true; });
       container.removeEventListener('mouseleave', () => { pause = false; });
     };
@@ -159,6 +163,10 @@ export default function Showcase() {
         <div 
           ref={scrollContainerRef}
           className="flex space-x-6 overflow-x-auto pb-8 scrollbar-none"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
         >
           {showcaseItems.map((item, index) => (
             <div key={index} className="flex-shrink-0 w-[280px]">

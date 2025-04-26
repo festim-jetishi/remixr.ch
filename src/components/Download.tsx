@@ -19,10 +19,10 @@ export default function Download() {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in" style={{animationDelay: '0.4s'}}>
-          <Button className="animated-gradient-btn text-white font-semibold py-6 px-8 text-lg">
+          <Button className="bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-semibold py-6 px-8 text-lg hover:shadow-lg hover:shadow-remixr-magenta/20 hover:scale-105 transition-all duration-300">
             <span className="mr-2">📱</span> App Store
           </Button>
-          <Button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-6 px-8 text-lg">
+          <Button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-6 px-8 text-lg transition-all duration-300">
             <span className="mr-2">🤖</span> Google Play
           </Button>
         </div>

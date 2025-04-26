@@ -21,11 +21,11 @@ const Step: React.FC<StepProps> = ({ number, title, description, isActive, onCli
     >
       <div className="flex items-start gap-4">
         <div 
-          className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold transition-all duration-300 ${
-            isActive 
-              ? 'bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white' 
-              : 'bg-white/10 text-white/70'
-          }`}
+          className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold transition-all duration-300"
+          style={{
+            background: isActive ? 'linear-gradient(to right, #8A2BE2, #FF00FF)' : 'rgba(255, 255, 255, 0.1)',
+            color: isActive ? 'white' : 'rgba(255, 255, 255, 0.7)'
+          }}
         >
           {number}
         </div>
@@ -44,7 +44,7 @@ export default function HowItWorks() {
   const steps = [
     {
       title: "Upload Your Photo",
-      description: "Select or take a photo directly in the app. Our AI supports high-resolution images for the best results.",
+      description: "Select or take a photo directly in the app. We process it securely and delete it immediately after delivering your results.",
     },
     {
       title: "Choose Your Transformation",
@@ -101,8 +101,8 @@ export default function HowItWorks() {
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-remixr-black rounded-b-xl"></div>
               <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden">
                 {/* Step 1: Upload */}
-                <div className={`absolute inset-0 transition-all duration-700 ${
-                  activeStep === 0 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                  activeStep === 0 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
                 }`}>
                   <div className="h-full flex flex-col">
                     <div className="p-4 border-b border-white/10">
@@ -115,6 +115,7 @@ export default function HowItWorks() {
                             <span className="text-2xl">📸</span>
                           </div>
                           <p className="text-white/70">Tap to select photo</p>
+                          <p className="text-white/50 text-xs mt-2">Images are deleted after processing</p>
                         </div>
                       </div>
                     </div>
@@ -122,8 +123,8 @@ export default function HowItWorks() {
                 </div>
                 
                 {/* Step 2: Choose transformation */}
-                <div className={`absolute inset-0 transition-all duration-700 ${
-                  activeStep === 1 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                  activeStep === 1 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
                 }`}>
                   <div className="h-full flex flex-col">
                     <div className="p-4 border-b border-white/10">
@@ -147,8 +148,8 @@ export default function HowItWorks() {
                 </div>
                 
                 {/* Step 3: Result */}
-                <div className={`absolute inset-0 transition-all duration-700 ${
-                  activeStep === 2 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                <div className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                  activeStep === 2 ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
                 }`}>
                   <div className="h-full flex flex-col">
                     <div className="p-4 border-b border-white/10">

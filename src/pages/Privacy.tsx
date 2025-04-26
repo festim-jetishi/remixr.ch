@@ -1,119 +1,107 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-export default function Privacy() {
+const Privacy = () => {
   return (
     <div className="min-h-screen bg-remixr-dark text-white">
       <Header />
-      
-      <main className="pt-32 pb-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 gradient-text">Privacy Policy</h1>
-          
-          <div className="prose prose-invert max-w-none">
-            <p className="text-white/70 mb-6">
-              Last updated: April 26, 2024
-            </p>
-            
-            <p className="text-white/70 mb-4">
-              This Privacy Policy describes how Remixr ("we", "our", or "us") collects, uses, and shares your personal information 
-              when you use our mobile application ("the App").
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>
-            <p className="text-white/70 mb-4">
-              <strong>Images and Content:</strong> When you use our App, we temporarily process the images you upload to provide 
-              our AI transformation services. These images are stored on Google Cloud Storage (GCS) during processing.
-            </p>
-            <p className="text-white/70 mb-4">
-              <strong>Usage Data:</strong> We collect data about how you interact with the App, including features used, 
-              time spent in the App, and transformation types selected.
-            </p>
-            <p className="text-white/70 mb-4">
-              <strong>Device Information:</strong> We collect information about your device, including model, operating system, 
-              unique device identifiers, and mobile network information.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">2. How We Use Your Information</h2>
-            <p className="text-white/70 mb-4">
-              We use the information we collect to:
-            </p>
-            <ul className="list-disc pl-8 mb-4 text-white/70 space-y-2">
-              <li>Provide, maintain, and improve our services</li>
-              <li>Process your images with our AI transformation features</li>
-              <li>Analyze usage patterns to enhance user experience</li>
-              <li>Detect and address technical issues</li>
-              <li>Send you app-related notifications</li>
-            </ul>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">3. Data Retention and Deletion</h2>
-            <p className="text-white/70 mb-4">
-              Your uploaded images are temporarily stored on our servers during processing via OpenAI's services. 
-              Once processing is complete, these images are automatically deleted. We do not retain your images 
-              beyond the time needed for processing unless you explicitly save them to your account.
-            </p>
-            <p className="text-white/70 mb-4">
-              <strong>Important:</strong> We do not use your images to train our AI models.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">4. Third-Party Services</h2>
-            <p className="text-white/70 mb-4">
-              We use the following third-party services:
-            </p>
-            <ul className="list-disc pl-8 mb-4 text-white/70 space-y-2">
-              <li>Google Cloud Storage (GCS) for temporary image storage</li>
-              <li>OpenAI for AI image processing</li>
-              <li>Standard analytics tools to measure app performance and usage</li>
-              <li>App store payment processing for subscription services</li>
-            </ul>
-            <p className="text-white/70 mb-4">
-              These services may collect information sent by your device. Their use of this information is governed 
-              by their respective privacy policies.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">5. User Registration</h2>
-            <p className="text-white/70 mb-4">
-              Remixr does not require user registration to use basic features. If you choose to subscribe to Remixr Pro, 
-              payment information is processed by your app store (Apple App Store or Google Play Store) and is subject to 
-              their privacy policies.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">6. Data Security</h2>
-            <p className="text-white/70 mb-4">
-              We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, 
-              or destruction of your information. However, no method of electronic transmission or storage is 100% secure.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">7. Children's Privacy</h2>
-            <p className="text-white/70 mb-4">
-              Our App is not intended for children under the age of 13. We do not knowingly collect personal information 
-              from children under 13. If you believe we have collected information from a child under 13, please contact us.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">8. Changes to This Privacy Policy</h2>
-            <p className="text-white/70 mb-4">
-              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new 
-              Privacy Policy on this page and updating the "Last updated" date.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">9. Contact Us</h2>
-            <p className="text-white/70 mb-4">
-              If you have questions or concerns about this Privacy Policy, please contact us at privacy@remixrapp.com.
-            </p>
-            
-            <div className="mt-12 mb-8">
-              <Link to="/" className="text-remixr-magenta hover:text-white transition-colors">
-                &larr; Back to Home
-              </Link>
-            </div>
-          </div>
+      <div className="max-w-3xl mx-auto px-6 py-32">
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 gradient-text">Privacy Policy</h1>
+        
+        <div className="p-6 mb-8 bg-white/5 border border-white/10 rounded-xl">
+          <h2 className="text-xl font-bold text-remixr-magenta mb-4">Image Privacy Commitment</h2>
+          <p className="text-white mb-4">At Remixr, we take your privacy very seriously. Here's our commitment to you:</p>
+          <ul className="list-disc pl-6 space-y-2 text-white/80">
+            <li><strong className="text-white">Immediate Deletion:</strong> All images you upload are automatically and permanently deleted from our servers as soon as we've processed them and delivered your results.</li>
+            <li><strong className="text-white">No Data Retention:</strong> We do not store, archive, or maintain any copies of your uploaded images.</li>
+            <li><strong className="text-white">No Secondary Use:</strong> Your images are never used to train our AI models or for any purpose other than providing you with the specific service you requested.</li>
+            <li><strong className="text-white">Temporary Storage Only:</strong> Images are only temporarily stored on Google Cloud Storage for the brief period needed to process your request.</li>
+          </ul>
         </div>
-      </main>
-      
+        
+        <div className="space-y-6 text-white/70">
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
+            <p>This Privacy Policy explains how Remixr ("we", "our", or "us") collects, uses, and discloses information about you when you use our mobile application and related services (collectively, the "Services").</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
+            <p>We collect minimal information to provide our services:</p>
+            <ul className="list-disc pl-6 mt-2">
+              <li>Images you upload for processing (temporarily stored and immediately deleted after processing)</li>
+              <li>Basic usage analytics to improve our services</li>
+              <li>Device information to ensure compatibility</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
+            <p>We use your information solely to:</p>
+            <ul className="list-disc pl-6 mt-2">
+              <li>Process your images and deliver the requested transformations</li>
+              <li>Improve our services and user experience</li>
+              <li>Troubleshoot technical issues</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">4. User Registration</h2>
+            <p>Remixr does not require user registration or accounts to use the basic features of the application.</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">5. Image Processing & Storage</h2>
+            <div className="bg-white/5 rounded-lg p-4 border border-remixr-magenta/30">
+              <p className="mb-2">We want to be exceptionally clear about how we handle your images:</p>
+              <ul className="list-disc pl-6">
+                <li><strong className="text-white">Temporary Storage:</strong> Images are temporarily stored on Google Cloud Storage only for the duration needed to process them.</li>
+                <li><strong className="text-white">Processing:</strong> Images are processed using OpenAI and other AI services to create the transformations you request.</li>
+                <li><strong className="text-white">Immediate Deletion:</strong> All uploaded images are PERMANENTLY DELETED from our servers immediately after processing is complete and results are delivered to your device.</li>
+                <li><strong className="text-white">No Training Data:</strong> We DO NOT use your images to train our AI models under any circumstances.</li>
+              </ul>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">6. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your information from unauthorized access, disclosure, or alteration. These measures include encryption, firewalls, and secure server infrastructure.</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">7. Data Sharing</h2>
+            <p>We do not share your personal information with third parties except as necessary to provide our services (e.g., with our AI processing partners) or as required by law.</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">8. Children's Privacy</h2>
+            <p>Our Services are not intended for children under the age of 13, and we do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us, and we will take steps to delete that information.</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">9. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on our website or within the app. You are advised to review this Privacy Policy periodically for any changes.</p>
+          </section>
+          
+          <section>
+            <h2 className="text-2xl font-bold text-white mb-4">10. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p><a href="mailto:privacy@remixr.com" className="text-remixr-magenta hover:underline">privacy@remixr.com</a></p>
+          </section>
+          
+          <section className="mt-10 pt-6 border-t border-white/10">
+            <p>Last updated: April 26, 2023</p>
+            <div className="mt-6">
+              <Link to="/" className="text-remixr-magenta hover:underline">Return to Home</Link>
+            </div>
+          </section>
+        </div>
+      </div>
       <Footer />
     </div>
   );
-}
+};
+
+export default Privacy;

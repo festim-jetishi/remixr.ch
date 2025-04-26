@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
@@ -26,9 +27,9 @@ export default function Header() {
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <span className="font-bold text-2xl tracking-tight gradient-text">
+          <Link to="/" className="font-bold text-2xl tracking-tight gradient-text hover:opacity-90 transition-opacity">
             Remixr
-          </span>
+          </Link>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#features" className="text-white/70 hover:text-white transition-colors">Features</a>
@@ -37,7 +38,7 @@ export default function Header() {
           <a href="#pricing" className="text-white/70 hover:text-white transition-colors">Pro</a>
         </nav>
         <div>
-          <Button className="animated-gradient-btn text-white font-semibold">
+          <Button className="bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-semibold hover:shadow-lg hover:shadow-remixr-magenta/20 transition-all duration-300">
             Download
           </Button>
         </div>

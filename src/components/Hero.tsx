@@ -22,10 +22,10 @@ export default function Hero() {
             Transform your photos with artistic styles, try on fashion virtually, and redesign your spaces—all powered by cutting-edge AI.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start animate-fade-in" style={{animationDelay: '0.4s'}}>
-            <Button className="animated-gradient-btn text-white font-semibold py-6 px-8 text-lg">
+            <Button className="bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-semibold py-6 px-8 text-lg hover:shadow-lg hover:shadow-remixr-magenta/20 hover:scale-105 transition-all duration-300">
               <span className="mr-2">📱</span> App Store
             </Button>
-            <Button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-6 px-8 text-lg">
+            <Button className="bg-white/10 hover:bg-white/20 text-white font-semibold py-6 px-8 text-lg transition-all duration-300">
               <span className="mr-2">🤖</span> Google Play
             </Button>
           </div>

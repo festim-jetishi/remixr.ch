@@ -18,21 +18,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, ima
     )}
     style={{ animationDelay: `${index * 0.2}s` }}
     >
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-4 relative z-10">
         <div className="w-14 h-14 rounded-full bg-remixr-magenta/20 flex items-center justify-center text-remixr-magenta text-2xl mb-4">
           {icon}
         </div>
         <h3 className="text-2xl font-bold gradient-text">{title}</h3>
-        <p className="text-white/70">{description}</p>
+        <p className="text-white/90">{description}</p>
       </div>
       
-      <div className="absolute -bottom-2 -right-2 w-40 h-40 opacity-50 group-hover:opacity-80 transition-opacity duration-300">
+      <div className="absolute -bottom-2 -right-2 w-40 h-40 opacity-30 group-hover:opacity-50 transition-opacity duration-300 z-0">
         <img 
           src={imageSrc} 
           alt={title} 
           className="w-full h-full object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-remixr-darker rounded-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-remixr-darker via-remixr-darker to-transparent rounded-xl"></div>
       </div>
     </div>
   );
@@ -74,6 +74,7 @@ export default function Features() {
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Remixr uses cutting-edge AI to supercharge your creativity and transform your world.
+            <span className="block mt-4 text-white/90 font-medium">We only process your images to deliver results - they're deleted immediately after.</span>
           </p>
         </div>
         
