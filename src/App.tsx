@@ -17,7 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/remixr.ch">
+      <BrowserRouter>
         <ScrollToTop /> {/* Add the component here */}
         <Routes>
           <Route path="/" element={<Index />} />
