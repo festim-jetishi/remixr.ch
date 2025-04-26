@@ -32,13 +32,14 @@ export default function Hero() {
         </div>
         
         <div className="relative h-[400px] md:h-[600px] animate-fade-in group" style={{animationDelay: '0.6s'}}>
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* Second phone (behind) - ensuring it's always visible */}
+          <div className="absolute inset-0 flex items-center justify-center perspective-1000">
+            {/* Second phone (behind) */}
             <div className="absolute phone-mockup -rotate-6 translate-x-[-20px] transition-all duration-700 
                 group-hover:-rotate-3 group-hover:-translate-x-8 group-hover:scale-95 
                 animate-phone-float-delayed z-0">
-              <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-4 border-gray-800 shadow-xl shadow-remixr-blueviolet/10 p-3 opacity-90">
-                <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden">
+              <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-8 border-gray-800 shadow-2xl shadow-remixr-blueviolet/20 p-3 opacity-90">
+                <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-black/10"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1500673922987-e212871fec22" 
                     alt="Remixr Room Design"
@@ -48,6 +49,9 @@ export default function Hero() {
                     <h3 className="text-white font-bold text-lg">AI Room Design</h3>
                   </div>
                 </div>
+                {/* Phone frame details */}
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-700 rounded-full"></div>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-gray-700 rounded-full"></div>
               </div>
             </div>
             
@@ -55,8 +59,9 @@ export default function Hero() {
             <div className="absolute phone-mockup rotate-6 translate-x-[20px] transition-all duration-700 
                 group-hover:rotate-0 group-hover:translate-x-8 group-hover:scale-105 
                 animate-phone-float z-10">
-              <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-4 border-gray-800 shadow-xl shadow-remixr-magenta/10 p-3">
-                <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden">
+              <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-8 border-gray-800 shadow-2xl shadow-remixr-magenta/20 p-3">
+                <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-black/10"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
                     alt="Remixr AI Style"
@@ -66,6 +71,9 @@ export default function Hero() {
                     <h3 className="text-white font-bold text-lg">AI Style Transfer</h3>
                   </div>
                 </div>
+                {/* Phone frame details */}
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-700 rounded-full"></div>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-gray-700 rounded-full"></div>
               </div>
             </div>
           </div>
