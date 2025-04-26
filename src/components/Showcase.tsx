@@ -1,5 +1,4 @@
-
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 interface ShowcaseCardProps {
   before: string;
@@ -10,14 +9,36 @@ interface ShowcaseCardProps {
 }
 
 const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, description, index }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-  
+  const [showAfter, setShowAfter] = useState(false);
+
+  useEffect(() => {
+    // Add a delay before starting the interval based on the card's index
+    const startDelay = index * 600; // Stagger start by 600ms per card (increased from 300)
+    
+    const timeoutId = setTimeout(() => {
+      const intervalId = setInterval(() => {
+        setShowAfter(prev => !prev);
+      }, 3000); // Change image every 3 seconds
+
+      // Store intervalId to clear it on unmount
+      (timeoutId as any).intervalId = intervalId; 
+
+    }, startDelay);
+
+    return () => {
+      clearTimeout(timeoutId);
+      // Clear the interval if it was started
+      if ((timeoutId as any).intervalId) {
+        clearInterval((timeoutId as any).intervalId);
+      }
+    }; // Cleanup timeout and interval on component unmount
+  }, [index]); // Add index to dependency array for the delay calculation
+
   return (
     <div 
       className="rounded-xl overflow-hidden group animate-fade-in"
       style={{ animationDelay: `${index * 0.15}s` }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // Removed hover handlers
     >
       <div className="relative aspect-[4/5] overflow-hidden">
         {/* Before image */}
@@ -26,7 +47,7 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
           alt={`Before: ${title}`} 
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            opacity: isHovered ? 0 : 1,
+            opacity: showAfter ? 0 : 1, // Use showAfter state
             transition: "opacity 400ms ease-in-out"
           }}
         />
@@ -37,13 +58,13 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
           alt={`After: ${title}`} 
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            opacity: isHovered ? 1 : 0,
+            opacity: showAfter ? 1 : 0, // Use showAfter state
             transition: "opacity 400ms ease-in-out"
           }}
         />
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-remixr-darker to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-remixr-darker to-transparent opacity-60 transition-opacity duration-300"></div>
         
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -55,7 +76,7 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
         
         {/* Slider indicator */}
         <div className="absolute top-4 right-4 bg-black/50 text-white text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm">
-          {isHovered ? 'After' : 'Before'}
+          {showAfter ? 'After' : 'Before'} {/* Reflect current state */}
         </div>
       </div>
     </div>
@@ -64,84 +85,51 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
 
 export default function Showcase() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
-  // Example showcase items - in a real implementation, these would be actual before/after images
+
+  // Swapped 'before' and 'after' to show original first
   const showcaseItems = [
     {
-      before: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-      after: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-      title: "Neo-Punk Style Transfer",
-      description: "Transform everyday photos into cyberpunk masterpieces with neon accents and futuristic aesthetics."
+      before: "room_design/examples/room_1.jpg", // Original
+      after: "room_design/examples/result_1.png", // Transformed
+      title: "Modern Room Redesign",
+      description: "Visualize your space transformed into a sleek, modern style instantly."
     },
     {
-      before: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      after: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      title: "Virtual Fashion Try-On",
-      description: "See how the latest fashion trends look on you without changing clothes."
+      before: "style_remix/examples/ghibli/1_original.jpg", // Original
+      after: "style_remix/examples/ghibli/1_ai.jpg", // Transformed
+      title: "Ghibli Style Transfer",
+      description: "Turn your photos into enchanting scenes reminiscent of Ghibli films."
     },
     {
-      before: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      after: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      title: "Minimalist Room Design",
-      description: "Transform cluttered spaces into sleek, minimalist environments instantly."
+      before: "virtual_try_on/examples/model_1.jpg", // Original
+      after: "virtual_try_on/examples/result_1.png", // Transformed
+      title: "Virtual Shirt Try-On",
+      description: "See how this stylish shirt looks on the model without a fitting room."
     },
     {
-      before: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-      after: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-      title: "Vintage Film Effect",
-      description: "Add classic film grain and color grading to create nostalgic memories."
+      before: "style_remix/examples/pixar/1_original.jpg", // Original
+      after: "style_remix/examples/pixar/1_ai.png", // Transformed
+      title: "Pixar Character Style",
+      description: "Give your portraits a fun, animated look inspired by Pixar movies."
     },
     {
-      before: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      after: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      title: "Neon Glow Portrait",
-      description: "Add vibrant neon lighting effects to portrait photography."
+      before: "room_design/examples/room_2.jpg", // Original
+      after: "room_design/examples/result_2.png", // Transformed
+      title: "Bohemian Living Room",
+      description: "Instantly redesign a living space with a cozy, bohemian vibe."
     },
     {
-      before: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-      after: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-      title: "Water Color Style",
-      description: "Transform photos into beautiful watercolor paintings with artistic brushstrokes."
+      before: "style_remix/examples/muppet/1_original.jpg", // Original
+      after: "style_remix/examples/muppet/1_ai.png", // Transformed
+      title: "Muppet Transformation",
+      description: "See yourself or friends reimagined as lovable Muppet characters."
     },
   ];
 
-  // Auto-scroll functionality with requestAnimationFrame for better performance
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-    
-    let scrollAmount = 0;
-    let pause = false;
-    let animationId: number;
-    
-    const handleScroll = () => {
-      if (!container || pause) return;
-      
-      scrollAmount += 0.3; // Reduced speed for smoother scrolling
-      container.scrollLeft = scrollAmount;
-      
-      if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        scrollAmount = 0;
-      }
-      
-      animationId = requestAnimationFrame(handleScroll);
-    };
-    
-    animationId = requestAnimationFrame(handleScroll);
-    
-    // Pause scrolling when hovering
-    container.addEventListener('mouseenter', () => { pause = true; });
-    container.addEventListener('mouseleave', () => { 
-      pause = false; 
-      animationId = requestAnimationFrame(handleScroll); 
-    });
-    
-    return () => {
-      cancelAnimationFrame(animationId);
-      container.removeEventListener('mouseenter', () => { pause = true; });
-      container.removeEventListener('mouseleave', () => { pause = false; });
-    };
-  }, []);
+  // Duplicate items for infinite scroll effect
+  const duplicatedItems = [...showcaseItems, ...showcaseItems];
+
+  // Removed useEffect for JS scrolling, will use CSS animation instead
 
   return (
     <section id="showcase" className="py-24 px-6 relative overflow-hidden">
@@ -156,30 +144,35 @@ export default function Showcase() {
             <span className="gradient-text">See</span> What's Possible
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Hover over each image to see the before and after transformation.
+            Watch the transformations unfold automatically. {/* Updated text */}
           </p>
         </div>
         
-        <div 
-          ref={scrollContainerRef}
-          className="flex space-x-6 overflow-x-auto pb-8 scrollbar-none"
-          style={{
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none'
-          }}
+        {/* Outer wrapper to clip the scrolling content */}
+        <div className="overflow-x-hidden pb-8"> 
+          {/* Inner container with animation and large width */}
+          <div 
+            className="flex space-x-6 showcase-scroll-container" // Removed overflow-x-hidden, pb-8. Kept animation class. Removed ref.
+            style={{
+              // Width is now set in CSS
+            }}
         >
-          {showcaseItems.map((item, index) => (
-            <div key={index} className="flex-shrink-0 w-[280px]">
+          {/* Render duplicated items */}
+          {duplicatedItems.map((item, index) => (
+            // Use a unique key combining original index and duplication factor
+            <div key={`${index}-${item.title}`} className="flex-shrink-0 w-[280px]"> 
               <ShowcaseCard 
                 before={item.before}
                 after={item.after}
                 title={item.title}
                 description={item.description}
-                index={index}
+                // Pass original index for animation delay consistency if needed, or adjust logic
+                index={index % showcaseItems.length} 
               />
             </div>
           ))}
-        </div>
+          </div> {/* Closing tag for inner showcase-scroll-container */}
+        </div> {/* Missing closing tag for outer overflow-x-hidden wrapper */}
       </div>
     </section>
   );

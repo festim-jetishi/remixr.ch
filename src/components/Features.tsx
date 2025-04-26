@@ -13,7 +13,9 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon, imageSrc, index }) => {
   return (
     <div className={cn(
-      "relative overflow-hidden glass-card rounded-2xl p-8 transition-all duration-500 hover:shadow-lg hover:shadow-remixr-magenta/20 group",
+      "relative overflow-hidden rounded-2xl p-8 transition-all duration-500 group", // Removed glass-card, kept base styles
+      "bg-black/40 backdrop-blur-md border border-white/10", // Added glassmorphism styles: background, blur, border
+      "hover:bg-black/50 hover:border-white/20 hover:shadow-xl hover:shadow-remixr-magenta/20", // Enhanced hover state
       "animate-fade-in"
     )}
     style={{ animationDelay: `${index * 0.2}s` }}
@@ -44,19 +46,19 @@ export default function Features() {
       title: "AI Style Remix",
       description: "Transform your photos with hundreds of artistic styles, from neo-punk to renaissance, in seconds.",
       icon: "🎨",
-      imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      imageSrc: "style_remix/previews/pixar.png"
     },
     {
       title: "Virtual Try-On",
       description: "See how clothes and accessories look on you before buying. Swipe through options instantly.",
       icon: "👕",
-      imageSrc: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+      imageSrc: "virtual_try_on/items/shirt.jpg"
     },
     {
       title: "AI Room Design",
       description: "Redesign any room with new styles, furniture, and decor using our powerful AI visualization.",
       icon: "🏠",
-      imageSrc: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
+      imageSrc: "room_design/styles/minimalist.jpg"
     }
   ];
 

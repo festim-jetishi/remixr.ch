@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +22,21 @@ html {
     background-clip: text;
     color: transparent;
   }
+
+  /* Showcase infinite scroll animation */
+  .showcase-scroll-container {
+    /* Apply the animation */
+    animation: scroll-showcase 40s linear infinite; 
+    /* Ensure the flex container itself doesn't wrap and has enough width */
+    /* The width needs to be double the content width to accommodate the duplicated items */
+    width: calc(2 * ( (280px + 1.5rem) * 6 )); /* (card width + gap) * number of original items * 2 */
+    /* Adjust 280px if card width changes, 1.5rem if gap changes, 6 if number of items changes */
+  }
+
+  /* Removed hover pause rule */
 }
+
+/* Removed Custom Scrollbar for Showcase styles */
 
 @keyframes phone-float {
   0% {
@@ -31,5 +44,16 @@ html {
   }
   100% {
     transform: translateY(-20px); /* Only vertical movement */
+  }
+}
+
+/* Keyframes for showcase scroll */
+@keyframes scroll-showcase {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by half the container width (width of the original set of items) */
+    transform: translateX(-50%); 
   }
 }

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import { Button } from "@/components/ui/button";
 import { Check } from 'lucide-react';
 
@@ -48,7 +49,7 @@ export default function Pricing() {
                   Upgrade to Pro
                 </Button>
                 <p className="text-sm text-white/50 mt-3 text-center">
-                  Cancel anytime. See our <a href="/terms" className="underline hover:text-white">Terms & Conditions</a> for details.
+                  Cancel anytime. See our <Link to="/terms" className="underline hover:text-white">Terms & Conditions</Link> for details.
                 </p>
               </div>
             </div>

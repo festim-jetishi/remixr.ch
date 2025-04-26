@@ -41,8 +41,8 @@ export default function Hero() {
                 <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/10"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1500673922987-e212871fec22" 
-                    alt="Remixr Room Design"
+                    src="virtual_try_on/examples/result_1.png" 
+                    alt="Remixr Virtual Try-On"
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-remixr-dark to-transparent">
@@ -63,7 +63,7 @@ export default function Hero() {
                 <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/10"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+                    src="style_remix/previews/pixar.png" 
                     alt="Remixr AI Style"
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                   />
