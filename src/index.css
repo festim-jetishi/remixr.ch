@@ -1,90 +1,20 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 300 100% 50%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 270 100% 53%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 300 100% 50%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 300 100% 50%;
-
-    --radius: 0.75rem;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border selection:bg-remixr-magenta/20 selection:text-white;
-  }
-
-  body {
-    @apply bg-remixr-dark text-foreground antialiased;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-  }
-
-  html {
-    @apply scroll-smooth;
-  }
-  
-  ::-webkit-scrollbar {
-    @apply w-2;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-remixr-dark;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-remixr-grey/30 rounded-full hover:bg-remixr-grey/50 transition-colors;
-  }
-}
-
 @layer components {
-  .glass-card {
-    @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-lg;
+  .animate-phone-float {
+    animation: phone-float 4s ease-in-out infinite alternate;
   }
   
-  .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta;
+  .animate-phone-float-delayed {
+    animation: phone-float 4s ease-in-out infinite alternate;
+    animation-delay: 2s;
   }
-  
-  .gradient-border {
-    @apply relative;
+}
+
+@keyframes phone-float {
+  0% {
+    transform: translateY(0) rotate(6deg);
   }
-  
-  .gradient-border::before {
-    content: "";
-    @apply absolute inset-0 rounded-lg p-[2px] bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta -z-10;
-  }
-  
-  .animated-gradient-btn {
-    @apply relative overflow-hidden bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta bg-[length:200%_100%] animate-gradient-shift transition-all duration-300 hover:shadow-lg hover:shadow-remixr-magenta/20 hover:scale-105;
+  100% {
+    transform: translateY(-20px) rotate(6deg);
   }
 }
