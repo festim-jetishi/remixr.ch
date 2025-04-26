@@ -36,7 +36,7 @@ export default function Hero() {
             {/* Second phone (behind) */}
             <div className="absolute phone-mockup -rotate-6 translate-x-[-20px] transition-all duration-700 
                 group-hover:-rotate-3 group-hover:-translate-x-8 group-hover:scale-95 
-                animate-phone-float-delayed z-0">
+                 z-0">
               <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-8 border-gray-800 shadow-2xl shadow-remixr-blueviolet/20 p-3 opacity-90">
                 <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/10"></div>
@@ -58,7 +58,7 @@ export default function Hero() {
             {/* First phone (front) */}
             <div className="absolute phone-mockup rotate-6 translate-x-[20px] transition-all duration-700 
                 group-hover:rotate-0 group-hover:translate-x-8 group-hover:scale-105 
-                animate-phone-float z-10">
+                 z-10">
               <div className="w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-8 border-gray-800 shadow-2xl shadow-remixr-magenta/20 p-3">
                 <div className="w-full h-full bg-remixr-dark rounded-[32px] overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/10"></div>
