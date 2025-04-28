@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# Remixr
 
-## Project info
+A web application showcasing AI-powered image generation and manipulation features. Built with Vite, React, TypeScript, shadcn/ui, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/1888cc1e-b24d-4526-a46f-9b4ddbf9daa7
+## Features
 
-## How can I edit this code?
+This application demonstrates several AI capabilities:
 
-There are several ways of editing your application.
+*   **Room Design:** Visualize different interior design styles in various room settings.
+*   **Style Remix:** Apply artistic styles (like Ghibli, Pixar, Muppet, etc.) to existing images.
+*   **Virtual Try-On:** See how clothing items or accessories might look on different models.
 
-**Use Lovable**
-test
-Simply visit the [Lovable Project](https://lovable.dev/projects/1888cc1e-b24d-4526-a46f-9b4ddbf9daa7) and start prompting.
+## Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+*   [Vite](https://vitejs.dev/) - Fast frontend build tool
+*   [React](https://reactjs.org/) - JavaScript library for building user interfaces
+*   [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
+*   [shadcn/ui](https://ui.shadcn.com/) - Re-usable UI components
+*   [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Follow these steps to set up and run the project locally.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+*   [Node.js](https://nodejs.org/) (LTS version recommended)
+*   [npm](https://www.npmjs.com/) (comes with Node.js) or [Bun](https://bun.sh/)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1.  **Clone the repository:**
+    ```bash
+    git clone <YOUR_REPOSITORY_URL>
+    cd remixr # Or your project directory name
+    ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2.  **Install dependencies:**
+    Using npm:
+    ```bash
+    npm install
+    ```
+    Or using Bun:
+    ```bash
+    bun install
+    ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Running the Development Server
+
+Start the local development server with hot-reloading:
+
+Using npm:
+```bash
 npm run dev
 ```
+Or using Bun:
+```bash
+bun run dev
+```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1888cc1e-b24d-4526-a46f-9b4ddbf9daa7) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Open your browser and navigate to the URL provided (usually `http://localhost:5173`).
