@@ -31,7 +31,7 @@ export default function Hero() {
           </div>
         </div>
         
-        <div className="relative h-[400px] md:h-[600px] animate-fade-in group" style={{animationDelay: '0.6s'}}>
+        <div className="relative h-[600px] md:h-[600px] animate-fade-in group" style={{animationDelay: '0.6s'}}>
           <div className="absolute inset-0 flex items-center justify-center perspective-1000">
             {/* Second phone (behind) */}
             <div className="absolute phone-mockup -rotate-6 translate-x-[-20px] transition-all duration-700 

@@ -6,7 +6,6 @@ export default function Download() {
   return (
     <section className="py-24 px-6 relative overflow-hidden bg-gradient-to-r from-remixr-blueviolet/20 to-remixr-magenta/20">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5')] bg-cover bg-center opacity-10"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-remixr-darker opacity-80"></div>
       </div>
       

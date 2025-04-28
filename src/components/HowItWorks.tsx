@@ -95,7 +95,7 @@ export default function HowItWorks() {
             ))}
           </div>
           
-          <div className="relative h-[500px] flex items-center justify-center">
+          <div className="relative h-[500px] flex items-center justify-center mt-8 md:mt-0">
             {/* Phone mockup with animated transitions between steps */}
             <div className="relative w-[280px] h-[580px] bg-remixr-black rounded-[40px] border-4 border-gray-800 p-3 shadow-lg shadow-remixr-magenta/10 animate-float">
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-remixr-black rounded-b-xl"></div>

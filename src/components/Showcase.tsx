@@ -10,6 +10,7 @@ interface ShowcaseCardProps {
 
 const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, description, index }) => {
   const [showAfter, setShowAfter] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Ref to store interval ID
 
   useEffect(() => {
     // Add a delay before starting the interval based on the card's index
@@ -20,16 +21,16 @@ const ShowcaseCard: React.FC<ShowcaseCardProps> = ({ before, after, title, descr
         setShowAfter(prev => !prev);
       }, 3000); // Change image every 3 seconds
 
-      // Store intervalId to clear it on unmount
-      (timeoutId as any).intervalId = intervalId; 
+      // Store intervalId in the ref to clear it on unmount
+      intervalRef.current = intervalId;
 
     }, startDelay);
 
     return () => {
       clearTimeout(timeoutId);
-      // Clear the interval if it was started
-      if ((timeoutId as any).intervalId) {
-        clearInterval((timeoutId as any).intervalId);
+      // Clear the interval using the ref if it was started
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     }; // Cleanup timeout and interval on component unmount
   }, [index]); // Add index to dependency array for the delay calculation
