@@ -45,7 +45,8 @@ export default function Pricing() {
               </div>
               
               <div className="pt-6">
-                <Button className="animated-gradient-btn text-white font-semibold py-6 px-8 text-lg w-full">
+                {/* Use standard button variant and size */}
+                <Button size="lg" className="w-full">
                   Upgrade to Pro
                 </Button>
                 <p className="text-sm text-white/50 mt-3 text-center">
