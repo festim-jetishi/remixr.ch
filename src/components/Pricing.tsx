@@ -63,9 +63,9 @@ export default function Pricing() {
                   {/* Split display showing free vs pro */}
                   <div className="w-full h-full flex">
                     <div className="w-1/2 relative overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" 
-                        alt="Free version" 
+                      <img
+                        src="/style_remix/examples/ghibli/1_original.jpg"
+                        alt="Original image (Free comparison)"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-remixr-dark/80"></div>
@@ -74,9 +74,9 @@ export default function Pricing() {
                       </div>
                     </div>
                     <div className="w-1/2 relative overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1500673922987-e212871fec22" 
-                        alt="Pro version" 
+                      <img
+                        src="/style_remix/examples/ghibli/1_ai.jpg"
+                        alt="Ghibli style AI remix (Pro comparison)"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute top-4 right-4 bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white text-xs px-3 py-1 rounded-full">

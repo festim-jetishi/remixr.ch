@@ -85,16 +85,10 @@ const Privacy = () => {
             <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on our website or within the app. You are advised to review this Privacy Policy periodically for any changes.</p>
           </section>
           
-          <section>
-            <h2 className="text-2xl font-bold text-white mb-4">10. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p><a href="mailto:privacy@remixr.com" className="text-remixr-magenta hover:underline">privacy@remixr.com</a></p>
-          </section>
-          
           <section className="mt-10 pt-6 border-t border-white/10">
             <p>Last updated: April 26, 2023</p>
             <div className="mt-6">
-              <Link to="/" className="text-remixr-magenta hover:underline">Return to Home</Link>
+              <Link to="/" className="text-remixr-magenta hover:text-white transition-colors">&larr; Return to Home</Link>
             </div>
           </section>
         </div>
