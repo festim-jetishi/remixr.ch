@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,10 +21,10 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-bold text-white mb-4">Product</h4>
               <ul className="space-y-2">
-                <li><Link to="/#features" className="text-white/60 hover:text-white transition-colors">Features</Link></li>
-                <li><Link to="/#how-it-works" className="text-white/60 hover:text-white transition-colors">How It Works</Link></li>
-                <li><Link to="/#pricing" className="text-white/60 hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link to="/#showcase" className="text-white/60 hover:text-white transition-colors">Showcase</Link></li>
+                <li><HashLink smooth to="#features" className="text-white/60 hover:text-white transition-colors">Features</HashLink></li>
+                <li><HashLink smooth to="#how-it-works" className="text-white/60 hover:text-white transition-colors">How It Works</HashLink></li>
+                <li><HashLink smooth to="#pricing" className="text-white/60 hover:text-white transition-colors">Pricing</HashLink></li>
+                <li><HashLink smooth to="#showcase" className="text-white/60 hover:text-white transition-colors">Showcase</HashLink></li>
               </ul>
             </div>
             
