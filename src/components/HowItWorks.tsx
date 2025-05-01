@@ -47,7 +47,7 @@ export default function HowItWorks() {
       description: "Select or take a photo directly in the app. We process it securely and delete it immediately after delivering your results.",
     },
     {
-      title: "Choose Your Transformatiddon",
+      title: "Choose Your Transformation",
       description: "Pick from style remixing, virtual try-on for fashion, or room redesign options.",
     },
     {
