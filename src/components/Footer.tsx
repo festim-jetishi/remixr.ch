@@ -21,10 +21,10 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-bold text-white mb-4">Product</h4>
               <ul className="space-y-2">
-                <li><HashLink smooth to="#features" className="text-white/60 hover:text-white transition-colors">Features</HashLink></li>
-                <li><HashLink smooth to="#how-it-works" className="text-white/60 hover:text-white transition-colors">How It Works</HashLink></li>
-                <li><HashLink smooth to="#pricing" className="text-white/60 hover:text-white transition-colors">Pricing</HashLink></li>
-                <li><HashLink smooth to="#showcase" className="text-white/60 hover:text-white transition-colors">Showcase</HashLink></li>
+                <li><HashLink smooth to="/#features" className="text-white/60 hover:text-white transition-colors">Features</HashLink></li>
+                <li><HashLink smooth to="/#how-it-works" className="text-white/60 hover:text-white transition-colors">How It Works</HashLink></li>
+                <li><HashLink smooth to="/#pricing" className="text-white/60 hover:text-white transition-colors">Pricing</HashLink></li>
+                <li><HashLink smooth to="/#showcase" className="text-white/60 hover:text-white transition-colors">Showcase</HashLink></li>
               </ul>
             </div>
             

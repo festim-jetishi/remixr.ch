@@ -33,10 +33,10 @@ export default function Header() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
-          <HashLink smooth to="#features" className="text-white/70 hover:text-white transition-colors">Features</HashLink>
-          <HashLink smooth to="#how-it-works" className="text-white/70 hover:text-white transition-colors">How It Works</HashLink>
-          <HashLink smooth to="#showcase" className="text-white/70 hover:text-white transition-colors">Showcase</HashLink>
-          <HashLink smooth to="#pricing" className="text-white/70 hover:text-white transition-colors">Pro</HashLink>
+          <HashLink smooth to="/#features" className="text-white/70 hover:text-white transition-colors">Features</HashLink>
+          <HashLink smooth to="/#how-it-works" className="text-white/70 hover:text-white transition-colors">How It Works</HashLink>
+          <HashLink smooth to="/#showcase" className="text-white/70 hover:text-white transition-colors">Showcase</HashLink>
+          <HashLink smooth to="/#pricing" className="text-white/70 hover:text-white transition-colors">Pro</HashLink>
         </nav>
         <div>
           <Button className="bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-semibold hover:shadow-lg hover:shadow-remixr-magenta/20 transition-all duration-300">
