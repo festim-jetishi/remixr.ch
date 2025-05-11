@@ -22,7 +22,7 @@ const LegalNotice: React.FC = () => {
               <strong>Phone:</strong> <a href="tel:+41763441820" className="text-remixr-magenta hover:underline">+41 76 344 18 20</a>
             </p>
             <p>
-              <strong>Email:</strong> <a href="mailto:festim.jetishi@hotmail.ch" className="text-remixr-magenta hover:underline">festim.jetishi@hotmail.ch</a>
+              <strong>Email:</strong> <a href="mailto:jetishi.festim@gmail.com" className="text-remixr-magenta hover:underline">jetishi.festim@gmail.com</a>
             </p>
           </section>
           <section>
