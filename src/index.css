@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #0F0E17;
+  /* match remixr-dark */
 }
 
 @layer components {
   .animate-phone-float {
     animation: phone-float 4s ease-in-out infinite alternate;
   }
-  
+
   .animate-phone-float-delayed {
     animation: phone-float 4s ease-in-out infinite alternate;
     animation-delay: 2s;
@@ -25,35 +31,118 @@ html {
 
   /* Showcase infinite scroll animation */
   .showcase-scroll-container {
-    /* Apply the animation */
-    animation: scroll-showcase 40s linear infinite; 
-    /* Ensure the flex container itself doesn't wrap and has enough width */
-    /* The width needs to be double the content width to accommodate the duplicated items */
-    width: calc(2 * ( (280px + 1.5rem) * 6 )); /* (card width + gap) * number of original items * 2 */
-    /* Adjust 280px if card width changes, 1.5rem if gap changes, 6 if number of items changes */
+    animation: scroll-showcase 40s linear infinite;
+    width: max-content;
+    /* Simplified width calculation */
   }
 
-  /* Removed hover pause rule */
+  /* Hero Vertical Scroll Animations */
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(-50%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-scroll-up {
+    animation: scroll-up 30s linear infinite;
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 30s linear infinite;
+  }
+
+  @keyframes scan-down {
+    from {
+      top: -20%;
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    to {
+      top: 120%;
+      opacity: 0;
+    }
+  }
+
+  .animate-scan-down {
+    animation: scan-down 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-x {
+    background-size: 200% auto;
+    animation: gradient-x 3s linear infinite;
+  }
+
+  @keyframes gradient-x {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* No Scrollbar Utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* Removed Custom Scrollbar for Showcase styles */
-
+/* Kept phone-float just in case used elsewhere, though Hero replaced it */
 @keyframes phone-float {
   0% {
-    transform: translateY(0); /* Only vertical movement */
+    transform: translateY(0);
   }
+
   100% {
-    transform: translateY(-20px); /* Only vertical movement */
+    transform: translateY(-20px);
   }
 }
 
-/* Keyframes for showcase scroll */
 @keyframes scroll-showcase {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    /* Translate by half the container width (width of the original set of items) */
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
   }
+}
+
+.animate-scroll-left {
+  animation: scroll-showcase 60s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-showcase 60s linear infinite reverse;
+}
+
+/* Pause on hover utility needs to be handled via group-hover or similar, but for now standard class */
+.hover\:pause:hover {
+  animation-play-state: paused;
+}
+
+.mask-image-linear-to-r {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
