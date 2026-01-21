@@ -63,8 +63,10 @@ const Privacy = () => {
                             <p className="mb-2">When you use features that involve face processing (such as Packs, Magic Studio, or Quick Edits):</p>
                             <ul className="list-disc pl-6 space-y-2">
                                 <li><strong className="text-white">Data Collection:</strong> We process images that may contain faces solely to provide the AI transformation you requested.</li>
+                                <li><strong className="text-white">Subject Classification:</strong> We use AI to detect whether your image contains a person, group, or room to provide you with relevant editing options. This classification is temporary and not stored.</li>
                                 <li><strong className="text-white">Purpose:</strong> Face data is used exclusively for generating the artistic results or edits you select. We do not use facial data for authentication, user identification, biometric tracking, or any other purpose.</li>
                                 <li><strong className="text-white">Processing:</strong> Images are temporarily processed using Google Gemini AI to detect and transform facial features as requested.</li>
+                                <li><strong className="text-white">Retention:</strong> Images containing faces are stored only for the brief time needed to generate your results. Once results are delivered to your device, images are permanently deleted from our servers.</li>
                                 <li><strong className="text-white">No Biometric Storage:</strong> We do not extract, store, or retain biometric identifiers, "face prints," or facial recognition data. The processing is purely for image transformation.</li>
                                 <li><strong className="text-white">No Marketing Use:</strong> We do not share your facial images with third parties for advertising or marketing purposes.</li>
                             </ul>
