@@ -42,9 +42,11 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Button size="lg" className="h-14 px-8 text-lg bg-white text-black hover:bg-white/90 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105">
-              <Download className="mr-2 h-5 w-5" /> Download App
-            </Button>
+            <a href="https://apps.apple.com/us/app/remixr/id6744621781" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="h-14 px-8 text-lg bg-white text-black hover:bg-white/90 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all hover:scale-105">
+                <Download className="mr-2 h-5 w-5" /> Download App
+              </Button>
+            </a>
             <Button size="lg" variant="ghost" className="h-14 px-8 text-lg text-white hover:bg-white/10 rounded-full border border-white/10">
               Explore Packs <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

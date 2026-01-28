@@ -64,9 +64,11 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Button className="bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 rounded-full px-6">
-            Download App
-          </Button>
+          <a href="https://apps.apple.com/us/app/remixr/id6744621781" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 rounded-full px-6">
+              Download App
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -94,12 +96,14 @@ export default function Header() {
               {link.name}
             </HashLink>
           ))}
-          <Button
-            className="mt-8 bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-bold py-6 px-10 text-xl rounded-full shadow-lg shadow-remixr-magenta/30"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Download App <ArrowRight className="ml-2" />
-          </Button>
+          <a href="https://apps.apple.com/us/app/remixr/id6744621781" target="_blank" rel="noopener noreferrer">
+            <Button
+              className="mt-8 bg-gradient-to-r from-remixr-blueviolet to-remixr-magenta text-white font-bold py-6 px-10 text-xl rounded-full shadow-lg shadow-remixr-magenta/30"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Download App <ArrowRight className="ml-2" />
+            </Button>
+          </a>
         </div>
       </div>
     </header>
