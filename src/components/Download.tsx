@@ -30,13 +30,15 @@ export default function Download() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <Button className="h-16 px-8 rounded-2xl bg-white text-black hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3">
-            <Apple size={28} className="mb-1" />
-            <div className="text-left">
-              <div className="text-[10px] uppercase font-bold tracking-wider opacity-60 leading-none">Download on the</div>
-              <div className="text-lg font-bold leading-none">App Store</div>
-            </div>
-          </Button>
+          <a href="https://apps.apple.com/us/app/remixr/id6744621781" target="_blank" rel="noopener noreferrer">
+            <Button className="h-16 px-8 rounded-2xl bg-white text-black hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3">
+              <Apple size={28} className="mb-1" />
+              <div className="text-left">
+                <div className="text-[10px] uppercase font-bold tracking-wider opacity-60 leading-none">Download on the</div>
+                <div className="text-lg font-bold leading-none">App Store</div>
+              </div>
+            </Button>
+          </a>
 
           <Button className="h-16 px-8 rounded-2xl bg-white/10 text-white hover:bg-white/20 border border-white/10 transition-all duration-300 flex items-center justify-center gap-3">
             <Smartphone size={28} className="mb-1" />

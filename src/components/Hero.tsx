@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="space-y-8 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-4 animate-fade-in">
             <span className="flex h-2 w-2 rounded-full bg-green-500"></span>
-            <span className="text-white/80 text-sm font-medium">v2.2.2 Available Now</span>
+            <span className="text-white/80 text-sm font-medium">v2.3.5 Available Now</span>
           </div>
 
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[1.1] animate-fade-in" style={{ animationDelay: '0.1s' }}>
